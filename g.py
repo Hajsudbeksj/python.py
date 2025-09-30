@@ -5,10 +5,10 @@ app = Flask(__name__)
 
 # إعداد قاعدة البيانات
 db_config = {
-    'host': 'localhost',       # أو عنوان السيرفر
-    'user': 'root',            # اسم المستخدم
-    'password': 'yourpassword',
-    'database': 'school'
+    'host': 'sql.freedb.tech',       # أو عنوان السيرفر
+    'user': 'freedb_Jsskjsbsd',            # اسم المستخدم
+    'password': 'fzAnf26Wq?%n@jd',
+    'database': 'freedb_Student1 zjsjsn'
 }
 
 def get_db_connection():
@@ -44,3 +44,4 @@ def get_grades(student_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
