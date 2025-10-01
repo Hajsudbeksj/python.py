@@ -52,7 +52,7 @@ def login_page():
             return render_template('login.html', error="اسم أو كلمة مرور خاطئة")
 
         student = students[0]
-        if not check_password_hash(student['password'], password):
+        if student and student['password'] == password:
             return render_template('login.html', error="اسم أو كلمة مرور خاطئة")
 
         session.permanent = True
@@ -88,3 +88,4 @@ def dashboard():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
