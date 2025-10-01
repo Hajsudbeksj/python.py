@@ -1,0 +1,121 @@
+/* ------------------------------
+   إعدادات أساسية للصفحة
+--------------------------------*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #74ABE2, #5563DE);
+    color: #333;
+}
+
+/* الحاوية الرئيسية */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* تدرج العناوين */
+h2 {
+    background: -webkit-linear-gradient(#5563DE, #74ABE2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* المدخلات */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #5563DE;
+    box-shadow: 0 0 8px rgba(85, 99, 222, 0.5);
+}
+
+/* الأزرار */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #5563DE, #74ABE2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(85, 99, 222, 0.4);
+}
+
+/* رسالة الخطأ */
+.error {
+    color: #ff4b5c;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* جدول الدرجات */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+th {
+    background: linear-gradient(135deg, #5563DE, #74ABE2);
+    color: white;
+}
+
+/* تأثير hover للصفوف */
+tr:hover td {
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+}
+
+/* رابط تسجيل الخروج */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #5563DE;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* تأثير دخول الصفحة */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
