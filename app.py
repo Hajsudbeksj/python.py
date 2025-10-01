@@ -45,15 +45,22 @@ def login_page():
             )
             r.raise_for_status()
             students = r.json()
-        except Exception as e:
-            return render_template('login.html', error=f"خطأ في الاتصال بقاعدة البيانات: {e}")
+            except Exception as e:
+        return render_template('login.html', error=f"خطأ في الاتصال بقاعدة البيانات: {e}")
 
-        if not students:
-            return render_template('login.html', error="اسم أو كلمة مرور خاطئة")
+    if not students:
+        return render_template('login.html', error="اسم أو كلمة مرور خاطئة")
 
-        student = students[0]
-        if student and student['password'] == password:
-            return render_template('login.html', error="اسم أو كلمة مرور خاطئة")
+    student = students[0]
+    if student['password'] != password:
+        return render_template('login.html', error="اسم أو كلمة مرور خاطئة")
+
+    session.permanent = True
+    session['student_id'] = student['id']
+    return redirect(url_for('dashboard'))
+
+
+  
 
         session.permanent = True
         session['student_id'] = student['id']
@@ -88,4 +95,5 @@ def dashboard():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
 
